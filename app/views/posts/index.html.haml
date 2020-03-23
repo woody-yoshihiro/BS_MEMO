@@ -1,0 +1,19 @@
+.side-index
+  .side-index__memo
+    メモ
+  %ul.side-index__label
+    %li ラベル
+    %li ラベル
+    %li ラベル
+    %li ラベルの編集
+  .side-index__trash-can
+    ゴミ箱
+
+.main.posts-index
+  .new-memo-form
+    = link_to "新しいメモの作成", posts_new_path, class: "a"
+  .container
+    - @posts.each do |post|
+      .posts-index-item
+        = link_to post.content, "/posts/#{post.id}", class: "a"
+

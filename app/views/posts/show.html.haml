@@ -1,0 +1,20 @@
+.side-index
+  .side-index__memo
+    メモ
+  %ul.side-index__label
+    %li ラベル
+    %li ラベル
+    %li ラベル
+    %li ラベルの編集
+  .side-index__trash-can
+    ゴミ箱
+
+
+.main.posts-show
+  .container
+    .posts-show-item
+      %p
+        = @post.content
+      .post-time
+        = @post.created_at
+          

@@ -1,0 +1,8 @@
+.main.posts-new
+  .container
+    %h1.form-heading メモを作成
+    = form_with url: posts_create_path, local: true do |f|
+      .form
+        .form-body
+          %textarea{:name => "content"}
+          = submit_tag "閉じる"
