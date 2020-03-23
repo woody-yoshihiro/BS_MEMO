@@ -4,5 +4,8 @@
     = form_with url: posts_create_path, local: true do |f|
       .form
         .form-body
-          %textarea{:name => "content"}
+          - @post.errors.full_messages.each do |message|
+            .form-error
+              = message
+          %textarea{:name => "content"} #{@post.content}
           = submit_tag "閉じる"

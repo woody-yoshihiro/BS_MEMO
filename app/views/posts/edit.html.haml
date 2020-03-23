@@ -4,5 +4,8 @@
     = form_with url: "/posts/#{@post.id}/update", local: true do |f|
       .form
         .form-body
+          - @post.errors.full_messages.each do |message|
+            .form-error
+              = message
           %textarea{:name => "content"} #{@post.content}
           = submit_tag "保存"

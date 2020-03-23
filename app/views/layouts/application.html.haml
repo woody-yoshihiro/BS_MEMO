@@ -14,4 +14,8 @@
       %ul.header__menus
         %li 
           = link_to "ユーザー詳細","/posts/index"
+    - if flash[:notice]
+      .flash
+        = flash[:notice]
+
     = yield
