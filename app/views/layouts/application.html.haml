@@ -16,12 +16,10 @@
           = link_to "BS_MEMO","/"
       %ul.header__menus
         - if @current_user
-          %li
-            = link_to "ログアウト", "/logout", method: :post
           %li 
             = link_to "メモ一覧", "/posts/index"
-          %li
-            = link_to "ユーザー一覧", "/users/index"
+          -# %li
+          -#   = link_to "ユーザー一覧", "/users/index"
           %li
             = link_to @current_user.name, "/users/#{@current_user.id}"
         - else
@@ -35,3 +33,4 @@
         = flash[:notice]
 
     = yield
+
