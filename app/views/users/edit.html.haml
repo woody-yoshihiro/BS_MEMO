@@ -1,0 +1,14 @@
+.main.users-edit
+  .container
+    .form-heading ユーザー情報の編集
+    .form.users-form
+      .form-body
+        - @user.errors.full_messages.each do |message|
+          .form-error
+            = message
+        = form_with url: "/users/#{@user.id}/update", local: true do |f|
+          %p ユーザー名
+          %input{:name => "name", :value => "#{@user.name}"}
+          %p メールアドレス
+          %input{:name => "email", :value => "#{@user.email}"}
+          = submit_tag "保存"

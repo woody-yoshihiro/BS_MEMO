@@ -1,0 +1,14 @@
+.main.users-new
+  .container
+    .form-heading 新規登録
+    .form.users-form
+      .form-body
+        - @user.errors.full_messages.each do |message|
+          .form-error
+            = message
+        = form_with url: users_create_path, local: true do |f|
+          %p 名前
+          %input{:name => "name"}
+          %p メールアドレス
+          %input{:name => "email"}
+          = submit_tag "登録"
