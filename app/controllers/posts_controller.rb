@@ -14,7 +14,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(
+      content: params[:content],
+      user_id: @current_user.id)
     if @post.save
       flash[:notice] = "新しいメモを作成しました"
       redirect_to(posts_index_path)
