@@ -1,0 +1,14 @@
+.main.users-new
+  .container
+    .form-heading ログイン
+    .form.users-form
+      .form-body
+        - if @error_message
+          .form-error
+            = @error_message
+        = form_with url: "/login", local: true do |f|
+          %p メールアドレス
+          %input{:name => "email", :value => "#{@email}"}
+          %p パスワード
+          %input{:name => "password", :type => "password", :value => "#{@password}"}
+          = submit_tag "ログイン"
