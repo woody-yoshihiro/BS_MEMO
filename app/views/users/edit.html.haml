@@ -6,9 +6,11 @@
         - @user.errors.full_messages.each do |message|
           .form-error
             = message
-        = form_with url: "/users/#{@user.id}/update", local: true do |f|
-          %p ユーザー名
+        = form_with url: "/users/#{@user.id}/update", local: true, multipart: true do |f|
+          %p 名前
           %input{:name => "name", :value => "#{@user.name}"}
+          %p 画像
+          %input{:name => "image", :type => "file"}
           %p メールアドレス
           %input{:name => "email", :value => "#{@user.email}"}
           = submit_tag "保存"

@@ -1,6 +1,7 @@
 .main.user-show
   .container
     .user
+      %img(src="/user_images/#{@user.image_name}")
       %h2
         = @user.name
       %p 
