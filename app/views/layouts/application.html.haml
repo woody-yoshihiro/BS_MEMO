@@ -12,8 +12,13 @@
       .header__logo
         = link_to "BS_MEMO","/"
       %ul.header__menus
+        %li
+          = link_to "新規登録", "/signup"
         %li 
-          = link_to "ユーザー詳細","/posts/index"
+          = link_to "ユーザー詳細", "/posts/index"
+        %li
+          = link_to "ユーザー一覧", "/users/index"
+
     - if flash[:notice]
       .flash
         = flash[:notice]
